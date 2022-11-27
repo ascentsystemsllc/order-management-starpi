@@ -5,7 +5,7 @@ module.exports = ({ env }) => ({
       connector: "mongoose",
       settings: {
         host: env("DATABASE_HOST"),
-        srv: env.bool("DATABASE_SRV"),
+        srv: env.bool("DATABASE_SRV",true),
         port: env.int("DATABASE_PORT", 27017),
         database: env("DATABASE_NAME"),
         username: env("DATABASE_USERNAME"),
@@ -16,7 +16,7 @@ module.exports = ({ env }) => ({
           "AUTHENTICATION_DATABASE",
           "firestore-demo"
         ),
-        ssl: env.bool("DATABASE_SSL", false),
+        ssl: env.bool("DATABASE_SSL", true),
       },
     },
   },
