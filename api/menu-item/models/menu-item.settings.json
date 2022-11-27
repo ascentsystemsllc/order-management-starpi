@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menu_items",
+  "info": {
+    "name": "Menu Item",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "categories": {
+      "via": "menu_items",
+      "collection": "category"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
